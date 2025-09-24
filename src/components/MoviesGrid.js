@@ -14,16 +14,18 @@ export default function MoviesGrid() {
 
     return (
         <div className="movies-grid">
-            <h2 className="movies-count">Total Movies: {movies.length}</h2>
-            <div className="grid">
-                {movies.map((movie) => (
+            {
+                movies.map((movie) => (
                     <div key={movie.id} className="movie-card">
-                        <img src={movie.image} alt={movie.title} className="movie-image" />
-                        <h3 className="movie-title">{movie.title}</h3>
-                        <p className="movie-year">{movie.year}</p>
+                        <img src={`images/${movie.image}`} alt={movie.title}/>
+                        <div className="movie-card-info">
+                            <h3 className="movie-card-title">{movie.title}</h3>
+                            <p className="movie-card-genre">{movie.genre}</p>
+                            <p className="movie-card-rating">{movie.rating}</p>
+                        </div>
                     </div>
-                ))}
+                ))
+            }
             </div>
-        </div>
     );
 }   
