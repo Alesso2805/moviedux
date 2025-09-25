@@ -61,6 +61,14 @@ body {
   justify-content: center;
 }
 
+/* When movies grid is empty (contains only the no-movies message) */
+.movies-grid:has(.no-movies) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+}
+
 /* Movie Card Styles */
 .movie-card {
   background-color: #272727;
@@ -248,4 +256,29 @@ input:checked + .slider:before {
 
 input:checked + .slider {
   background-color: #FFA100;
+}
+
+/* Loading and No Results Messages */
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+  text-align: center;
+}
+
+.loading-container p {
+  font-size: 18px;
+  color: #ccc;
+  font-weight: 300;
+}
+
+.no-movies {
+  font-size: 18px;
+  color: #999;
+  text-align: center;
+  font-weight: 300;
+  margin: 0;
+  padding: 20px;
+  width: 100%;
 }
