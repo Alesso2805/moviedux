@@ -3,7 +3,7 @@ import React from "react";
 import "../styles.css";
 import MovieCard from "./MovieCard";
 
-export default function MoviesGrid() {
+export default function MoviesGrid({movies, watchlist, toggleWatchlist}) {
 
     // Store all movies (never changes after initial load)
     const [allMovies, setAllMovies] = useState([]);
@@ -111,7 +111,7 @@ export default function MoviesGrid() {
                     <p className="no-movies">No movies found matching your criteria.</p>
                 ) : (
                     filteredMovies.map((movie) => (
-                        <MovieCard key={movie.id} movie={movie} />
+                        <MovieCard key={movie.id} movie={movie} isWatchlisted={watchlist.includes(movie.id)} toggleWatchlist={toggleWatchlist}/>
                     ))
                 )}
             </div>
